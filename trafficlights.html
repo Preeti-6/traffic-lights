@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <style>
+            h1{
+                text-shadow: 4px white;
+                font-size: 70;
+                padding-right:30 ;
+                text-decoration: wavy;
+            }
+            
+            body{
+                background-color: bisque;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+
+            }
+            .rect{
+                height: 400px;
+                width: 550px;
+                justify-content: center;
+                align-items: center;
+                background-color: aquamarine;
+                border-color: 2px black;
+                border-radius: 5%;
+            }
+            .circle{
+                margin: 50;
+                height: 140px;
+                width: 430px;
+                border-radius: 150px;
+                background-color: black;
+            }   
+            .cir{
+                
+                align-items: baseline;
+                margin: 20;                
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                background-color:gray;
+                display: inline-block;
+                
+            }
+           #cir1{
+            box-shadow:0 0 5px white;
+           }
+            input[type="button"]{
+                height: 40px;
+                width: 70px;
+                font-size: 20;
+                border-radius: 5%;
+                          
+            }  
+            .box{
+               
+                display:inline-flex;
+            } 
+            .box1{
+                align-content: space-between 5px;
+                padding-left: 60;
+                display: grid;
+                
+            } 
+            .box2{
+                padding-left: 60;
+                display: grid;
+            }
+            .trans::after{
+                transition: background-color .5s ease;
+                
+            }
+
+            
+        </style>
+    </head>
+    <body> 
+        <h1>Traffic lights</h1>       
+         <div class="rect" >
+           <div class="circle">
+            <div class="cir trans" id="cir1"></div>
+           <div class="cir trans" id="cir2"></div>
+           <div class="cir trans"id="cir3"></div>
+           </div>
+           <div class="box">
+           <div class="box1">
+            <input type="button" class="redbut"for="cir1" value="Red" onclick="red()" >
+            <input type="button" value="green" onclick="green()" >
+            <input type="button" value="yellow" onclick="yellow()" >
+           </div>
+           <div class="box2">
+            <input type="button"  value="Reset"  onclick="reset()">
+            <input type="button" value="Alt" onclick="altr()">
+           </div>
+        </div>
+         </div>   
+         <script>
+           function red(){
+              document.getElementById("cir1").style.backgroundColor="red";
+              document.getElementById("cir2").style.backgroundColor="gray";
+              document.getElementById("cir3").style.backgroundColor="gray";
+           }
+            function green(){
+                document.getElementById("cir1").style.backgroundColor="gray";
+                document.getElementById("cir2").style.backgroundColor ="green";
+                document.getElementById("cir3").style.backgroundColor="gray";
+            }
+            function yellow(){
+                document.getElementById("cir1").style.backgroundColor="gray";
+                document.getElementById("cir2").style.backgroundColor="gray";
+                document.getElementById("cir3").style.backgroundColor ="yellow";
+            } 
+            function reset(){
+                document.getElementById("cir1").style.backgroundColor="gray";
+                document.getElementById("cir2").style.backgroundColor="gray";
+                document.getElementById("cir3").style.backgroundColor="gray";
+            }
+            function altr(){
+               // document.getSelection(".trans").style.backgroundColor="red green yellow";
+
+                document.getElementById("cir1").style.backgroundColor="red";
+               document.getElementById("cir2").style.backgroundColor="green";
+               document.getElementById("cir3").style.backgroundColor="yellow";  
+               document.getSelection(".trans"); 
+                 
+                
+               }   
+                     
+         </script>      
+    </body>
+</html>
